@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: testdb
+          env:
+            - name: POSTGRES_PASSWORD_FILE
+              valueFrom:
+                configMapKeyRef:
+                  name: pgproperties
+                  key: POSTGRES_PASSWORD_FILE
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: pgproperties
+                  key: POSTGRES_USER
+            - name: PGDATA
+              valueFrom:
+                configMapKeyRef:
+                  name: pgproperties
+                  key: PGDATA
+          image: 'postgres-secret:latest'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data/
+              name: postgresdata
+      volumes:
+        - name: postgresdata
+          persistentVolumeClaim:
+            claimName: postgres-volume-claim

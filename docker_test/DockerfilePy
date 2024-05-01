@@ -1,0 +1,6 @@
+FROM python:3.9
+RUN pip3 install psycopg2-binary flask flask-cors
+RUN mkdir /backend
+COPY ./backend-backup.py /backend/backend.py
+EXPOSE 8080
+ENTRYPOINT python3 /backend/backend.py

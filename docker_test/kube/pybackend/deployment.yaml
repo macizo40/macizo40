@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pybackend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pybackend
+  template:
+    metadata:
+      labels:
+        app: pybackend
+    spec:
+      containers:
+        - name: pybackend
+          image: 'python-backend:proxy'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081

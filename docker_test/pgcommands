@@ -1,0 +1,22 @@
+ docker run -d \
+	--name testDB \
+	-e POSTGRES_PASSWORD_FILE=/var/lib/postgresql/secure/postgres-passwd \
+	-e POSTGRES_USER=admin \
+	-e PGDATA=/var/lib/postgresql/data/pgdata \
+	-v /Users/cikitrakes/docker_test/data:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    --network bridge \
+	postgres-secret:latest
+
+
+
+docker run -d \
+	--name pyBackend \
+	-p 8080:8080 \
+    --network bridge \
+	python-backend:latest
+
+
+DNS Template
+postgres-svc.postgres.svc.cluster.local
+<service_name>.<namespace>.svc.cluster.local

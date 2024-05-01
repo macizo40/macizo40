@@ -1,0 +1,38 @@
+Dockerfile commands
+FROM: select a base image
+ARG: built-time variables to use in the Dockerfile
+USER: assign a user to run the commands (user 0 is root)
+WORKDIR: select the working directory
+ENV: set environment variables
+RUN: execute a command
+COPY: copy files from local to the docker image
+ADD: add files from local to the docker image
+EXPOSE: expose a port
+CMD: command to execute when docker container starts
+ENTRYPOINT: script to execute when docker container starts
+
+Docker commands
+ps: show running containers
+image: show docker images
+    ls: list images
+    rm: remove image
+    tag: assign a tag to a existing docker image
+    pull: pull image from a registry or dockerhub
+    push: push image from a registry or dockerhub
+    build: create a docker image using a Dockerfile
+container: manage containers
+    run: start a container
+        --volume: create/assign a volume into a container
+        --port: assign a port to container
+        --network: select type of netwotk in which container is going to run
+        -d: run in detach mode (runnning in background)
+        -e: set environment variable
+    ls: list containers
+    rm: remove container
+    logs: watch logs from a container
+    cp: copy files from local/container into an other container
+    exec: execute a command in a container
+        -i: iterate the command (used to get inside the container)
+    inspect: show details of a container
+    stop: stop a container
+    restart: restart a container

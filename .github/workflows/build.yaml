@@ -9,3 +9,7 @@ jobs:
       - name: debug
         run: |
           ls ${{ github.workspace }}
+      - name: Build the Docker image
+        run: |
+          docker build . --file docker_test/Dockerfile --tag postgres:test 
+          docker images

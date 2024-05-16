@@ -9,6 +9,3 @@ jobs:
       - name: debug
         run: |
           ls ${{ github.workspace }}
-      - name: build image
-        using: 'docker'
-        image: 'docker_test/Dockerfile'

@@ -4,8 +4,6 @@
 
 lista1=("a" "a" "a" "b" "b" "c" "d" "e")
 lista2=("pato" "pato" "pato" "mano" "mano" "perro" "gato" "jirafa")
-#lista1=("a" "a" "a")
-#lista2=("pato" "pato" "pato")
 
 len_lista1=${#lista1[@]}
 len_lista2=${#lista2[@]}

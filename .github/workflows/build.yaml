@@ -1,0 +1,14 @@
+name: Docker build
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: debug
+        run: |
+          ls ${{ github.workspace }}
+      - name: build image
+        using: 'docker'
+        image: 'docker_test/Dockerfile'

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Transactions</title></head>
+<body>
+    <h1>Transaction History</h1>
+    <ul>
+        {% for tx in transactions %}
+            <li>{{ tx.sender }} sent ${{ tx.amount }} to {{ tx.receiver }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Payment App</title></head>
+<body>
+    <h1>Welcome to the Payment App</h1>
+    <h2>User Balances</h2>
+    <ul>
+        {% for user, data in users.items() %}
+            <li><a href="{{ url_for('balance', username=user) }}">{{ user }}</a>: ${{ data.balance }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('pay') }}">Make a Payment</a></p>
+    <p><a href="{{ url_for('list_transactions') }}">View Transactions</a></p>
+</body>
+</html>
+

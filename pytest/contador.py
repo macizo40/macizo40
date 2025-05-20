@@ -1,1 +1,0 @@
-cadena = input('Inserta tu nombre: ').lower()  # Convertir la cadena a minúsculas

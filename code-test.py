@@ -61,3 +61,5 @@ print("{:.3f}".format(3433.12564584))
 print("{:7.3f}".format(3.1256458454))
 print("{:7.3f}".format(345.14))
 
+
+print(f"There is a text with the value as is {sys.argv[2]}")

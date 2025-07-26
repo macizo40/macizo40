@@ -63,3 +63,39 @@ if 'mario' not in people:
     print("not in the group")
 else:
     print("yes exist")
+
+# now there is time to use the groups to remove all duplicated data, on this case we can have a single list that we will move to a group
+
+duplicated = [1,2,1,2,1,3,0,4,5,5,6,6,8,4,43,3,4,3,3,44,3,4]
+
+print("this is the list with all values {}".format(duplicated))
+
+#now lets cast the values to a set this is the easy way to reduce data from a huge list
+
+nondup  = set(duplicated)
+
+print("now this is the list with no mode duplicated data {}".format(nondup))
+
+
+# now for practice methods and make sure that a list does remove the duplicated data but still does have the propoerties as a list
+
+duplicated = list(set(duplicated))
+
+print("now the list still is a list but with no duplicated data {}".format(duplicated))
+
+#now lets try to avoid some usage of variables to just print the information
+
+print("now we will print just the list with no duplciated data here {} not using a variable to cast it".format(list(set(duplicated))))
+
+
+# to end there is a way to use the elements in the list as the trigger for a loop and add them to an specific list 
+
+mylist = {"one", "five", "three", "six"}
+
+for user in ["nine", "ten", "eleven", "zero", "two"]:
+    mylist.add(user)
+ 
+for user in ["one", "five", "six"]:
+    mylist.remove(user)
+
+print("now the list is {}".format(mylist))

@@ -99,3 +99,6 @@ for user in ["one", "five", "six"]:
     mylist.remove(user)
 
 print("now the list is {}".format(mylist))
+
+
+

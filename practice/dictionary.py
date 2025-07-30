@@ -14,6 +14,18 @@ myKeys = {10:'Mexico',22:'USA',55:'Canada'}
 
 print("if I select the value 22 in the list the value will be {}".format(myKeys[22]))
 
+#in any case that I need to change the values of the keys we can do it with a simply assignation
+
+myKeys[22] = 'Australia'
+
+print("now the new value of the code 22 is {}".format(myKeys[22]))
+
+#now doing the same process with a key that is text
+
+myColors['yellow'] = 'Japanese'
+
+print ("the traduction is wrong for yellow since is {}".format(myColors['yellow']))
+
 
 #now lets try to use the reverse instead of key lets find the value and see what gives us
 

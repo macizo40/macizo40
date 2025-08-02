@@ -35,3 +35,29 @@ myStack.pop()
 
 print("now after the pop, the last value added is now out the stack {}".format(myStack))
 
+
+#we can also play with que that is firt in and first out. for this you need to import the library
+
+from collections import deque
+
+#here we are creating a que that is empty
+
+myQue = deque()
+
+print("now will play with que here {}".format(myQue))
+
+#now we will play with it to confirm that the first that is in will be the first that will be out
+
+myQue.append('first')
+myQue.append('second')
+myQue.append('third')
+
+print("lets see how the order is now in {}".format(myQue))
+
+#as stack has a method called pop that takes the last of the list there is a method for que that pop but from the begining in the left.
+
+valueOutLeft = myQue.popleft()
+
+print("now lets check the value of the {} and the element take out was {}".format(myQue,valueOutLeft))
+
+#as we can see que model is working most to control the access or the order of request.

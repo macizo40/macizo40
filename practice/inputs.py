@@ -19,3 +19,19 @@ for x in range(5):
 #now lets print my list and see all the values
 
 print(" here is entire list: {} ".format(myList))
+
+#now lets continue playing with the format that some strings does have,using format but when we want to add more we can play like this
+
+#lets insert 30 spaces before the text
+
+print("{:>30} this text is after 30 spaces".format("aligned"))
+
+#the previous exmaple is considering align it to the right, so what if need to align to the left like this :
+
+print("{:30}".format("leftAligned"))
+
+# the previous exmaple does not aligned to left, is just creating 30 spaces after the text
+
+#now we can play to set the text in middle like 30 spaces, but there will be 15 before and 15 after
+
+print("{:^30}".format("center"))

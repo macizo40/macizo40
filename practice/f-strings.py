@@ -40,3 +40,16 @@ print("{}".format(3.146576857))
 print("now applyinf the special format .2f the value is:")
 print("{:.2f}".format(3.146576857))
 print("please note that the value not just got truncate also was move to the equilavent in float")
+
+
+print("now lets play with format floats with the same number of digist after the dot")
+print("{:.3f}".format(23.17))
+print("{:.3f}".format(1233.14857))
+
+print("now lets play with format floats aligned to same spaces to match the dot ")
+print("{:8.3f}".format(23.17))
+print("{:8.3f}".format(1233.14857))
+
+print("now lets play with format floats aligned to same spaces to match the dot but filled with 0 ")
+print("{:08.3f}".format(23.17))
+print("{:08.3f}".format(1233.14857))

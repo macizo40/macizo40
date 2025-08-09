@@ -53,3 +53,32 @@ print("{:8.3f}".format(1233.14857))
 print("now lets play with format floats aligned to same spaces to match the dot but filled with 0 ")
 print("{:08.3f}".format(23.17))
 print("{:08.3f}".format(1233.14857))
+
+#now lets play with another way to use the print of variables this is using the letter f before the chain of the srting as this
+
+myText = "Hello Rock"
+print(f"now we can see the value of the varible here {myText}")
+
+#the previous also helps to do operations in the code lets see 
+
+uno, two = 10, 2
+
+print(f"value one is {uno} value two is {two} now lets do some math and one plus two is {uno+two}")
+
+#use of the f-string depends of the version of python this is available on 3.6, so lets play now with functions and how they get printed
+
+def myFunction ():
+    return "inside my function"
+
+print(f" now let see the content that is called in the function that is {myFunction()}")
+
+#lets see what about dictionaries you need to change to use simpe quotes not double this is where you prefer use format
+
+numbers = {"one":1,"two":2,"three":3 }
+
+print(f" the value of the second element is {numbers['two']}")
+
+#lets play with maths and dictionaries
+
+print(f" now I try a math operation the sum of the element 1 and 2 is {numbers['one']+numbers['two']}")
+

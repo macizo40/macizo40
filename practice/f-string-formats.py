@@ -17,3 +17,15 @@ print(f"{myText:.8}")
 #lets start using variables to set tne values for alignment and also for the trunc
 
 myLimit=4
+myLimit2=80
+
+print(int(True))
+print(f"{myText:.{myLimit}}")
+print(f"{myText:^{myLimit2}}")
+
+#lets play with aligmenetn and truc with variables
+
+longitude=40
+limit=4
+
+print(f"{myText:^{longitude}.{limit}}")

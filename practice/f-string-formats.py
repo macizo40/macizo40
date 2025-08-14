@@ -29,3 +29,22 @@ longitude=40
 limit=4
 
 print(f"{myText:^{longitude}.{limit}}")
+
+#now lets also use the f-string with the techinque to add values to floats, or fill some spaces with some character
+
+print(f"{1:6d}")   # aligment to six spaces to the right
+print(f"{10:6d}")  # same as above
+print(f"{100:6d}") # all should be to the right
+
+print(f"{1:06d}")   # the 0 before the 6 is the character that we will include
+print(f"{10:06d}")  # same as above
+print(f"{100:06d}") # all should be to the right and filled
+
+#now lets use the floats numbers to show and truncate using variables
+
+floatNumber = 34.34334433
+floatLenght = 7
+floatLimitDecimal = 3
+floatFillNumber = 0
+
+print(f"{floatNumber:{floatFillNumber}{floatLenght}.{floatLimitDecimal}f}")

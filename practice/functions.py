@@ -32,3 +32,23 @@ def myOrderedList(obj1,obj2,obj3):
 myOrderedList("one",2,True)
 
 #what can happen if we do not pass all the elements, it fails, you need to pass all the elements defined
+
+#there are some others practives as we can do a loop with some values to do a repeteable action like print the 5 plus any number
+
+def loopPrint_number_5():
+    for iteratorNumber in range(10):
+        print("5 * {} = {}".format(iteratorNumber,iteratorNumber*5))
+
+loopPrint_number_5()
+
+#now lets do it more dynamic since we are always doing the number 5, now we will do it to do the same with any number that we pass
+
+def math_table_any_number(number):
+    for iterator in range(10):
+        print("{} * {} = {}".format(number,iterator,number*iterator))
+
+#now lets called with the number that we pass, let's do it for the number 1 and 2
+
+math_table_any_number(1)
+math_table_any_number(2)
+

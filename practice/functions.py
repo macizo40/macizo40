@@ -52,3 +52,38 @@ def math_table_any_number(number):
 math_table_any_number(1)
 math_table_any_number(2)
 
+#the previous example did start with 0 and ends with 9 since the values are starting as elements of an array, so let's try to fix that now
+
+def math_fixed_table(number):
+    for multiplier in range(11):
+        if multiplier != 0:
+            print("{} * {} = {}".format(number,multiplier,number*multiplier))
+
+
+math_fixed_table(3)
+math_fixed_table(4)
+
+#using the values of the if will be part of the math operation
+
+#lets start using another concept about the functions is to local variable or global variable
+#same as other OO languages, the local variables just exist in the method and not visible to the rest of the code
+
+def printing_local():
+    localText = "I am a local variable"
+    print(localText)
+
+#now lets call the method just to see how it works
+printing_local()
+
+#now let's try to print the variable localText ouside the method
+# print(localText) this line gives NameError: name 'localText' is not defined
+
+#now let's use the a varialbe outside the method and try to print it inside a method
+
+globalText = "I am a global text"
+
+
+def print_global():
+    print(globalText)
+
+print_global()

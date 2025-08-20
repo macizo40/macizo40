@@ -87,3 +87,29 @@ def print_global():
     print(globalText)
 
 print_global()
+
+#now lets try to modify global variables inside methods or functions
+
+#taking the previous text let's override the value inside the method
+
+
+print(f"this is hte value before the method = {globalText}")
+
+#define a new method to change the value inside, but you need to use a variable with a same name, this is a new varible visible only in the method
+
+def change_value():
+    globalText = "Changed on the method"
+    return globalText
+
+globalText = change_value()
+
+print(f"this is hte value after the method = {globalText}")
+
+# another easy way is just to return values with no variables use
+
+def simple_return():
+    return "my simple return text"
+
+globalText = simple_return()
+
+print(f"this is hte value using the simple return method = {globalText}")

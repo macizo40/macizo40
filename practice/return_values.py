@@ -23,3 +23,39 @@ def multiple_values():
 myText,myNumber,myList = multiple_values()
 
 print("first variable is {} second is {} and third is {}".format(myText,myNumber,myList))
+
+
+#now lets start to passing values to the functions, this values can be the same in the method and you do not need to assign them
+
+def math_sum(a,b):
+    return a+b
+
+print(f"the total is {math_sum(2,3)}")
+
+#this was a simple value return that will help us to define the math, but now lets assign in the moment values to the function
+
+print(f"the values will be the same but we set the order {math_sum(b=3,a=6)}")
+
+#most common errors are to pass values that may be empty so to validate this you can always check before start any operation
+
+def two_values(a=None,b=None):
+
+    if a==None or b==None:
+        print("one or more values can not be null")
+    else:
+        print(f"result is {a-b}")
+    
+
+#lets call the method with no values to check the message
+
+two_values()
+
+#now with just one value
+
+two_values(2)
+
+#now lets try the math
+
+two_values(4,2)
+    
+    

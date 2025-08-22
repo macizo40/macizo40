@@ -27,5 +27,24 @@ myListChanged(myList)
 
 print(f"this is the list after the method {myList}")
 
-#even in the method there was a new variable, the list type dos gets affected since thinks as a reference. 
+#even in the method there was a new variable, the list type dos gets affected since thinks as a reference, this will happen with list
 
+#now to avoid that a reference does affect and original list, we can do the next, anytime that we do an slicing it is created a copy
+#this will not affect the original value
+
+def avoidReference(numbers):
+    for i,n in enumerate(numbers):
+        print(f"working with i={i} and n={n}")
+        numbers[i] *= 2
+
+#lets create a new list 
+
+myNotChangedList = [1,2,3,4,5]
+
+print(f"this is the original list {myNotChangedList}")
+
+#now the trick is to do an slicing at the moment to call the method and this will create a copy and not a reference
+
+avoidReference(myNotChangedList[:])
+
+print(f"this is the list after the method {myNotChangedList}")

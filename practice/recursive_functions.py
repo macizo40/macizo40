@@ -40,3 +40,15 @@ f = float("1.3")
 #the famous toString from java is the next one changing the value to be an string
 
 t = str(10)
+
+#this usually the methods will help to do several adecuations to avoid problems, lets see what is the result of something with no change
+
+mixNumber = 10
+
+mixText = "10"
+
+#what is the result in python y if just do a '+'
+
+print("doing a mixing operation ",mixNumber+int(mixText))
+
+#the previous example do fail if you do not change the value to an int

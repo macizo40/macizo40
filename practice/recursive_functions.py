@@ -52,3 +52,24 @@ mixText = "10"
 print("doing a mixing operation ",mixNumber+int(mixText))
 
 #the previous example do fail if you do not change the value to an int
+
+#there are other types of methods as example change to binary a number
+
+print("the binary of 10 is ", bin(10))
+
+#other very usufel method in my opinion is the eval, which makes the python evaluate the content of the text and do the operation
+
+print("doing some maths with eval:",eval("2+5"))
+
+#we are passing a text which we know there is an operation there and the method will evaluate the action
+
+#even eval can take some variables that are reported before the call and no need to special format them as f-string
+
+outsiteVar = 10
+
+print("doing an eval with an external value inside the text, the variable is {} and doing the eval now {} ".format(outsiteVar,eval("outsiteVar + 10")))
+
+#other of the most common functions is the famous len this to ready the size of strings and list and more
+
+print(len("this text will give me a value"))
+

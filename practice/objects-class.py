@@ -31,9 +31,34 @@ class Company:
         for i,c in enumerate(self.clients):
             if c.id == id:
                 del(self.clients[i])
-                print(str(c),"> BORRADO")
+                print(str(c),"> DELETED")
                 return
         print("client not found")
+    
+
+    def delete_client_by_name(self, name=None):
+        for i,c in enumerate(self.clients):
+            if c.name == name:
+                del(self.clients[i])
+                print(str(c),"> DELETED")
+                return
+        print("client delete action error, client not found by name")
+    
+    #we can start to create more methods that maybe search not by id, maybe by name  
+    def show_client_by_name(self, name=None):
+        for c in self.clients:
+            if c.name == name:
+                print(c)
+                return
+        print("client name not found")
+
+    #we can search also by last name 
+    def show_client_by_lastname(self, lastname=None):
+        for c in self.clients:
+            if c.lastname == lastname:
+                print(c)
+                return
+        print("client last name not found")
 
 #now lets do play with the objects
 
@@ -56,7 +81,12 @@ comp.delete_client(tom.id) #succed since tom id was returned, but here the tom o
 
 #this will use the method __str__ of the object to do it more human readable.
 print("Object tom is still alive and just was removed from the class company ==",tom)
-
-
 comp.show_client(tom.id)
 
+#now let usde from the objet the name this ti avoid type in the values 
+
+comp.show_client_by_name(bob.name) #this will search by the last name not the id and we do not need to remember it.
+comp.show_client(bob.id) #this will give the same values as previous one
+
+comp.show_client_by_lastname(bob.lastname)
+comp.delete_client_by_name(tom.name)

@@ -60,14 +60,26 @@ class Company:
                 return
         print("client last name not found")
 
+    #so now lets try to get any value and validate it with the content that we have 
+    def show_client_by_any_value(self, value=None):
+        for c in self.clients:
+            if c.lastname == value or c.name == value or c.id == value:
+                print(c)
+                return
+        print("universal method client not found")
+
+
+
 #now lets do play with the objects
 
-bob = Client("20","Bob","Terminator")
-tom = Client("30","Tom","Byron")
+bob = Client("20","Bob","Dylan")
+tom = Client("30","Tom","Cruise")
+peter = Client("40","Peter","Pan")
+
 
 #at this point there are two objects with a set of data that identifies each client information we can pass a list of them to Company
 
-comp = Company(clients=[bob,tom])
+comp = Company(clients=[bob,tom,peter])
 
 #now that the class Company is ready we can play as we did with the show and delete
 
@@ -90,3 +102,7 @@ comp.show_client(bob.id) #this will give the same values as previous one
 
 comp.show_client_by_lastname(bob.lastname)
 comp.delete_client_by_name(tom.name)
+
+comp.show_client_by_any_value(peter.id)
+comp.show_client_by_any_value(peter.lastname)
+comp.show_client_by_any_value(peter.name)

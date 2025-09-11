@@ -67,6 +67,16 @@ class Company:
                 print(c)
                 return
         print("universal method client not found")
+    
+    #now we will follow the same logical way to have single method to delete if any of the values does match
+
+    def delete_client_by_any_value(self, value=None):
+        for i,c in enumerate(self.clients):
+            if c.name == value or c.id == value or c.lastname == value:
+                del(self.clients[i])
+                print(str(c),"-> Any method did work and this user is DELETED")
+                return
+        print("multi value of delete method error, value does not match with any")
 
 
 
@@ -75,11 +85,12 @@ class Company:
 bob = Client("20","Bob","Dylan")
 tom = Client("30","Tom","Cruise")
 peter = Client("40","Peter","Pan")
+monica = Client("10","Monica","Naranjo")
 
 
 #at this point there are two objects with a set of data that identifies each client information we can pass a list of them to Company
 
-comp = Company(clients=[bob,tom,peter])
+comp = Company(clients=[bob,tom,peter,monica])
 
 #now that the class Company is ready we can play as we did with the show and delete
 
@@ -88,21 +99,29 @@ comp.show_client("30") #should not show the client Tom and his data
 
 #now lets delete but now using the object that contains all data and not need to remember which ID we set 
 
-comp.delete_client(tom) #not found since you need the id
-comp.delete_client(tom.id) #succed since tom id was returned, but here the tom object is still alive 
+#comp.delete_client(tom) #not found since you need the id
+#comp.delete_client(tom.id) #succed since tom id was returned, but here the tom object is still alive 
 
 #this will use the method __str__ of the object to do it more human readable.
-print("Object tom is still alive and just was removed from the class company ==",tom)
+#print("Object tom is still alive and just was removed from the class company ==",tom)
 comp.show_client(tom.id)
 
 #now let usde from the objet the name this ti avoid type in the values 
 
 comp.show_client_by_name(bob.name) #this will search by the last name not the id and we do not need to remember it.
 comp.show_client(bob.id) #this will give the same values as previous one
-
 comp.show_client_by_lastname(bob.lastname)
-comp.delete_client_by_name(tom.name)
+
+comp.delete_client_by_name(monica.name)
 
 comp.show_client_by_any_value(peter.id)
 comp.show_client_by_any_value(peter.lastname)
 comp.show_client_by_any_value(peter.name)
+
+comp.delete_client_by_any_value(tom) #this will show error since there is not a object specific
+
+#now lets delete with any value each of the users in the list
+
+comp.delete_client_by_any_value(tom.id)
+comp.delete_client_by_any_value(peter.name)
+comp.delete_client_by_any_value(bob.lastname)

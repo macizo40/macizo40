@@ -18,11 +18,11 @@ class Cake:
 
 red_velvet = Cake ("red velvet","Chocolat","Big","Square")
 addiction = Cake ("addiction","Strawberry","Big","Circle")
-carrot = Cake ("carrot","Carrot","Big","Triangle")
+carrot = Cake ("carrot special","Carrot","Big","Triangle")
 
 
 
-#now lets use the __STR__ method:
+#now lets use the __STR__ method by just send to print the object, this will automatically use the __str__ method
 print(red_velvet)
 print(addiction)
 print(carrot)
@@ -34,6 +34,9 @@ class CakeShop:
     #same logic as before, lets get a list of objects that will be our constructor, it will get a list of cakes objects
     def __init__(self,cakes=[]):
         self.cakes = cakes
+
+    def __str__(self):
+        return "This is the Cake Shop class object"
 
     #image then what I want to know from an object, maybe his form, we need a method to get it, we will use any value
     def show_cake(self, value=None):
@@ -50,11 +53,35 @@ class CakeShop:
 
         for cake in self.cakes:
             # Dynamically check attributes
-                for attr in ("name", "flavour", "size", "form"):
-                    attr_value = getattr(cake, attr, None)
-                    if attr_value is not None and str(attr_value).lower() == search_value:
-                        print(f"Match found by {attr}: {cake}")
+            for attr in ("name", "flavour", "size", "form"):
+                attr_value = getattr(cake, attr, None)
+                if attr_value is not None and str(attr_value).lower() == search_value:
+                    print(f"Match found by {attr}: {cake}") #this will calls the str method that we set in the constructor
                     return cake
 
-        print(f"No client found matching '{value}'.")
-        return None   
+        print(f"No cake found matching '{value}'.")
+        return None 
+
+#now again lest create the class cake shop and sent the obejcts type cake
+
+cake_shop = CakeShop(cakes=[red_velvet,addiction,carrot])
+
+#after the class is create we can now start using the methos inside the class
+
+cake_shop.show_cake(addiction.flavour)
+cake_shop.show_cake(carrot.flavour)
+
+#lets use a different value to find
+
+cake_shop.show_cake(addiction.form)
+
+#lets try the empty value to see if the method works different
+
+cake_shop.show_cake()
+
+#now les try a value that we know that does not exist at all
+
+cake_shop.show_cake("simple")
+
+print(cake_shop)
+

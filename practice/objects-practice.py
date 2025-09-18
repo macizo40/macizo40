@@ -60,7 +60,34 @@ class CakeShop:
                     return cake
 
         print(f"No cake found matching '{value}'.")
-        return None 
+        return None
+
+    #now lets try the same approach as before to remove from the list an object 
+
+    def remove_cake (self, value=None):
+        #same as before we do validate the input
+        if not self.cakes:
+            print("No cakes available to delete")
+            return None
+
+        if value is None:
+            print("No value provided to delete")
+            return None
+
+        # Normalize value for case-insensitive comparison
+        search_value = str(value).lower()
+
+        for cake in self.cakes:
+            # Dynamically check attributes
+            for attr in ("name", "flavour", "size", "form"):
+                attr_value = getattr(cake, attr, None)
+                if attr_value is not None and str(attr_value).lower() == search_value:
+                    #del(self.cakes[cake])
+                    print(f"Found by {attr}: {cake}, deleting.....")
+                    return
+
+        print(f"No cake found matching to delete '{value}'.")
+        return None
 
 #now again lest create the class cake shop and sent the obejcts type cake
 
@@ -82,6 +109,8 @@ cake_shop.show_cake()
 #now les try a value that we know that does not exist at all
 
 cake_shop.show_cake("simple")
+#lets try to send a wrong value first
+cake_shop.remove_cake("simple")
 
-print(cake_shop)
-
+#now lets try to delete red_velvet
+cake_shop.remove_cake(red_velvet.flavour)

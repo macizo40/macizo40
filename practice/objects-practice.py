@@ -15,11 +15,19 @@ class Cake:
         return 'Cake {} details are {} {} {}'.format(self.name,self.flavour,self.size,self.form)
     
 #now we can play with some characteristics of the cakes
-
 red_velvet = Cake ("red velvet","Chocolat","Big","Square")
 addiction = Cake ("addiction","Strawberry","Big","Circle")
 carrot = Cake ("carrot special","Carrot","Big","Triangle")
 
+#lest create a single method that will save some lines of code for each method
+def empty_validation(self,value):
+    if not self.cakes:
+        print("No cakes available.")
+        return None
+
+    if value is None:
+        print("No search value provided.")
+        return None
 
 
 #now lets use the __STR__ method by just send to print the object, this will automatically use the __str__ method
@@ -37,16 +45,12 @@ class CakeShop:
 
     def __str__(self):
         return "This is the Cake Shop class object"
+    
 
     #image then what I want to know from an object, maybe his form, we need a method to get it, we will use any value
     def show_cake(self, value=None):
-        if not self.cakes:
-            print("No cakes available.")
-            return None
-
-        if value is None:
-            print("No search value provided.")
-            return None
+        
+        empty_validation (self,value)
 
         # Normalize value for case-insensitive comparison
         search_value = str(value).lower()
@@ -66,25 +70,21 @@ class CakeShop:
 
     def remove_cake (self, value=None):
         #same as before we do validate the input
-        if not self.cakes:
-            print("No cakes available to delete")
-            return None
-
-        if value is None:
-            print("No value provided to delete")
-            return None
+        empty_validation (self,value)
 
         # Normalize value for case-insensitive comparison
         search_value = str(value).lower()
 
-        for cake in self.cakes:
+        #this will create a variable of the position and the object too, this will be always the first value
+
+        for i,cake in enumerate(self.cakes): 
             # Dynamically check attributes
             for attr in ("name", "flavour", "size", "form"):
                 attr_value = getattr(cake, attr, None)
                 if attr_value is not None and str(attr_value).lower() == search_value:
-                    #del(self.cakes[cake])
-                    print(f"Found by {attr}: {cake}, deleting.....")
-                    return
+                    del(self.cakes[i])
+                    print(f"Found by {attr}: {cake} in position {i}, deleting.....")
+                    return cake
 
         print(f"No cake found matching to delete '{value}'.")
         return None
@@ -114,3 +114,9 @@ cake_shop.remove_cake("simple")
 
 #now lets try to delete red_velvet
 cake_shop.remove_cake(red_velvet.flavour)
+#checking that was removed from the list
+cake_shop.show_cake(red_velvet.flavour)
+#now lets try to find it with name
+cake_shop.show_cake(red_velvet.name)
+#now lets try to remove an already removed cake
+cake_shop.remove_cake(red_velvet.name)

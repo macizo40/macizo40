@@ -30,6 +30,23 @@ class Automobile:
 
     def paint_automobile(self,new_color):
         self.color = new_color
+        #lets add a parameter that will tell us that this auto was changed from his original color
+        self.wasPainted = True
+        return self
+    
+    #lets play with other actions that this class can have maybe repair car, this will need just get the object as is
+    #and we will add some values that explain now the repair
+
+    def repair_automobile(self):
+        self.isRepaired = True
+        self.newParts = ["door","windshiled","bumper","tires"]
+        return self
+    
+    #another can be maybe adding customs to this ride
+
+    def add_custom_parts(self,newPart):
+        self.hasCustomParts = True
+        self.newPart = newPart
         return self
 
 
@@ -46,15 +63,21 @@ forteHB.paint_automobile("Black")
 
 print ("Color of {} currently is {}".format(forteHB.model,forteHB.color))
 
-#we can call the destrcutor by calling the methid del
+#now lets see that after the methid is apply it, the object has a new value called wasPainted
 
-#del(forteHB)
+print ("Was this {} painted: {}".format(forteHB.model,forteHB.wasPainted))
 
-#using a simple str methid with a number
+#now lets play that we do repair this auto
 
-print(str(10))
+forteHB.repair_automobile()
 
-#now with our object
+#lets now see that new values are here
+
+print ("Was this {} repaired: {} with parts {}".format(forteHB.model,forteHB.isRepaired,forteHB.newParts))
+
+forteHB.add_custom_parts("ring")
+
+print ("Was this {} add custom parts: {} with parts {}".format(forteHB.model,forteHB.isRepaired,forteHB.newPart))
 
 print(str(forteHB))
 

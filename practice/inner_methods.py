@@ -18,15 +18,33 @@ class Automobile:
     #now a new specila method as other know as garbage collector, we can have a destrcutor methid known as "del"
     #this method always happens when the object is deleted during the program, running now will show ar the end of the program a deletion
     def __del__(self):
-        print("We are deleting automobile '{}'".format(self.model))
+        print("We are deleting automobile '{}' color '{}'".format(self.model,self.color))
 
     #a method that was previously used was str we can redefine the method to be more custom
 
     def __str__(self):
         #we just sue a return
         return "{} brand {} launched in {}".format(self.model,self.brand,self.year)
+    
+    #now lets do a simple method that will change the color of automobile, this methid will be called paint
+
+    def paint_automobile(self,new_color):
+        self.color = new_color
+        return self
+
 
 forteHB = Automobile("kia",2022,"white","forte HB")
+
+#now lets see the value of color first
+
+print ("Color of {} currently is {}".format(forteHB.model,forteHB.color))
+
+#now lets call the methid paint
+
+forteHB.paint_automobile("Black")
+
+
+print ("Color of {} currently is {}".format(forteHB.model,forteHB.color))
 
 #we can call the destrcutor by calling the methid del
 

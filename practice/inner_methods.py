@@ -1,3 +1,5 @@
+from datetime import date
+
 #lets work with some of the special methods that are reserved by default, some of them are very popular in most of the proggamming languages 
 
 #now lets use a previous example that at the beining it was not not clear for me but now is different
@@ -48,6 +50,15 @@ class Automobile:
         self.hasCustomParts = True
         self.newPart = newPart
         return self
+    
+    #waht about that a car need service and we want to track the record of services in the shop
+
+    def do_maintenance_service(self,kilometers):
+        self.current_kilometers = kilometers
+        self.next_service = kilometers + 10000
+        self.parts_changed = []
+        self.date_of_service = date.today()
+        return self
 
 
 forteHB = Automobile("kia",2022,"white","forte HB")
@@ -78,6 +89,12 @@ print ("Was this {} repaired: {} with parts {}".format(forteHB.model,forteHB.isR
 forteHB.add_custom_parts("ring")
 
 print ("Was this {} add custom parts: {} with parts {}".format(forteHB.model,forteHB.isRepaired,forteHB.newPart))
+
+#now lets give a service to this car
+
+forteHB.do_maintenance_service(1000)
+
+print("Was this {} had a service of {}kms and next service is {}kms".format(forteHB.model,forteHB.current_kilometers,forteHB.next_service))
 
 print(str(forteHB))
 

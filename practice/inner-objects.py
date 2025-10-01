@@ -28,5 +28,23 @@ class Catalog:
     #now lets create a method that will be saving our animes to that list
     def add_anime(self,anime):
         self.my_catalog.append(anime) 
-    
+
+   
+
+
+dragon_quest = Anime("Daino Dai Boken",8,"11-11-2010")
+
+print(dragon_quest)
+
+#lets now use the append method to add the object anime to the catalog, this time we do not need to pass an argument 
+#beacuse the calss has an inner variable so that it is initialized to empty already
+
+cartoon_catalog = Catalog()
+
+cartoon_catalog.add_anime(dragon_quest)
+
+#lets print the object catalog
+
+print(cartoon_catalog)
+
 

@@ -27,7 +27,30 @@ class Catalog:
 
     #now lets create a method that will be saving our animes to that list
     def add_anime(self,anime):
-        self.my_catalog.append(anime) 
+        self.my_catalog.append(anime)
+
+    def __str__(self):
+        for item in self.my_catalog:
+            print(item.title)
+        return "EOL"
+    
+    #image then what I want to know from an object, maybe his form, we need a method to get it, we will use any value
+    def get_info(self, value=None):
+        
+        # Normalize value for case-insensitive comparison
+        search_value = str(value).lower()
+
+        for item in self.my_catalog:
+            # Dynamically check attributes
+            for attr in ("title","seasons","date_of_beginining"):
+                attr_value = getattr(item, attr, None)
+                if attr_value is not None and str(attr_value).lower() == search_value:
+                    print(f"Match found by {attr}: {item}") #this will calls the str method that we set in the constructor
+                    return item
+
+        print(f"No anime found matching '{value}'.")
+        return None
+
 
    
 
@@ -44,6 +67,14 @@ cartoon_catalog = Catalog()
 cartoon_catalog.add_anime(dragon_quest)
 
 #lets print the object catalog
+
+print(cartoon_catalog)
+
+cartoon_catalog.get_info(dragon_quest.title)
+
+saint_seiya = Anime("Saint Seiya",9,"12-12-1996")
+
+cartoon_catalog.add_anime(saint_seiya)
 
 print(cartoon_catalog)
 

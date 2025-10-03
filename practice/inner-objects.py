@@ -20,6 +20,7 @@ class Catalog:
     #this will be a global value that can be managed in the entire class
     my_catalog = []
 
+
     #lets create his constructor, all class need one
 
     def __init__(self,catalog=[]):
@@ -31,7 +32,7 @@ class Catalog:
 
     def __str__(self):
         for item in self.my_catalog:
-            print(item.title)
+            print(item)
         return "EOL"
     
     #image then what I want to know from an object, maybe his form, we need a method to get it, we will use any value
@@ -77,5 +78,11 @@ saint_seiya = Anime("Saint Seiya",9,"12-12-1996")
 cartoon_catalog.add_anime(saint_seiya)
 
 print(cartoon_catalog)
+
+#anoher way to add values is to directly using the method and passing an object 
+
+cartoon_catalog.add_anime(Anime("Mazinger Z",13,"01-06-1978"))
+
+print (cartoon_catalog)
 
 

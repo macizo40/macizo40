@@ -47,7 +47,34 @@ b.vector(a)
 a.distance(b)
 b.distance(a)
 
-            
+class Rectangle:
+
+    def __init__(self,b=Dot(),h=Dot()):
+        self.b = b
+        self.h = h
+        print(f"Rectangle created with b={self.b} and h={self.h}")
+    
+    def base (self):
+        base_result = abs(self.h.x-self.b.x)
+        print(f"base is {base_result}")
+        return base_result
+    
+    def high (self):
+        high_result = abs(self.h.y - self.b.y)
+        print(f"high is {high_result}")
+        return high_result
+
+    def area (self):
+        print(f"base is {self.base()} and high is {self.high()}, area is equal to {(self.base() * self.high())}")
+
+r = Rectangle(a,b)
+r.base()
+r.high()
+r.area()
+
+
+
+
 
         
 

@@ -2,17 +2,42 @@
 
 class Product:
 
-    def __init__(self,reference,type,name,description,producer=None,distributor=None):
+    def __init__(self,reference,type,name,description):
         self.reference = reference
         self.name = name
         self.type = type
         self.description = description
-        self.producer = producer
-        self.distributor = distributor
-
+        
     def __str__(self):
         return "Reference={},Name={}".format(self.reference,self.name)
-    
 
-manga = Product("0E345","BOOK","HAMIJATE NO GAL","Anime book with season 1 and 2")
+book1 = Product("0E345","BOOK","HAMIJATE NO GAL","Anime book with season 1 and 2")
 
+print(book1)
+
+#now lets make the new class poiting out that this class is a child of product
+
+class Manga(Product):
+    pass
+
+#this will adopt all the process of the parent and we can instance a new object as before
+manga = Manga("087GH","DVD","DINO DAIBOKEN","Season 1 dvd saga")
+
+#since the parent has an override in the srt method, we will use the same
+print(manga)
+
+#now lets try to overwrite the methods from the parent to work as we want in a new class
+
+class Movie(Product):
+    distributor = ""
+    producer = ""
+
+    def __str__(self):
+        return "Reference={},Name={},Producer={},Distributor={}".format(self.reference,self.name,self.producer,self.distributor)
+
+#since the constructor from parent does not have the asignations, we need to make them ourselfs     
+mazinkaizer = Movie ("084MZ","DVD","MAZINKAIZER","Mazinkaiser rise of the heroes")
+mazinkaizer.producer = "Totem Productions"
+mazinkaizer.distributor = "Seto Company"
+#now with this we call the new str method just for this kind of object
+print(mazinkaizer)

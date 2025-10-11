@@ -41,3 +41,11 @@ mazinkaizer.producer = "Totem Productions"
 mazinkaizer.distributor = "Seto Company"
 #now with this we call the new str method just for this kind of object
 print(mazinkaizer)
+
+#lets create another movie type
+
+mazinger_z = Movie ("034MZ","DVD","MAZINGER Z","Mazinger revenge of Kabuto")
+mazinger_z.producer = "Totem Productions"
+mazinger_z.distributor = "Seto Company"
+#on this way we can now define many new objects that will be inherence from the main class known as parent class.
+print(mazinger_z)

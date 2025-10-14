@@ -14,7 +14,7 @@ class Computer:
         return "brand={},Name={}".format(self.brand,self.name)
 
 
-class Dell(Computer):
+class Acer(Computer):
     pass
 
 class HP(Computer):
@@ -23,4 +23,27 @@ class HP(Computer):
 
     def __str__(self):
         return "brand={},Name={},Producer={},Distributor={}".format(self.brand,self.name,self.extra_device,self.hard_disk_type)
+
+
+#lets create some objects to test the str method
+
+
+aspire = Acer("Acer","Desktop","Aspire","Desktop computer with speakers")
+
+print(aspire)
+
+#now lest inherance from a subclass no the parent
+
+class Sony(HP):
+    def __init__(self,brand,type,name,description,extra_device,hard_disk_type):
+        self.brand = brand
+        self.name = name
+        self.type = type
+        self.description = description
+        self.extra_device = extra_device
+        self.hard_disk_type = hard_disk_type
+
+vaio = Sony("Sony","Laptop","VAIO","Laptop with burner included")
+
+print("this object has the same values as his parent, but it is empty",vaio.extra_device)
 

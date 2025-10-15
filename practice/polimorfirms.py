@@ -43,7 +43,17 @@ class Sony(HP):
         self.extra_device = extra_device
         self.hard_disk_type = hard_disk_type
 
-vaio = Sony("Sony","Laptop","VAIO","Laptop with burner included")
+vaio = Sony("Sony","Laptop","VAIO","Laptop with burner included","card reader","solid")
 
 print("this object has the same values as his parent, but it is empty",vaio.extra_device)
 
+#lets now create a list of the objects
+
+computers = [aspire,vaio]
+
+#now that those are in the list does not matter, we read each with a for loop
+
+for comp in computers:
+    print(comp,"\n") #this will call each str method of each object
+
+#after the run you will see different behaviours of the print since each does have their method and others does use the parent method

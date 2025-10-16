@@ -57,3 +57,20 @@ for comp in computers:
     print(comp,"\n") #this will call each str method of each object
 
 #after the run you will see different behaviours of the print since each does have their method and others does use the parent method
+
+#also since we are saving the objects inside a new variable we can list that property that all have in common
+
+for brand in computers:
+    #since we now that inside the object we can pass that variable on the for
+    print(brand.brand)
+    print(brand.name)
+
+#nos lets introduce the term isistance, this will validate the type of the object with a certain instance
+
+for obj in computers:
+    
+    print(obj.brand)
+    #we do this since we know that this specific object does contains this values, if not then will just brand printed
+    if (isinstance(obj,HP)):
+        print(obj.extra_device)
+    

@@ -29,3 +29,26 @@ print(my_lower_case_string.find('lower')," ",my_lower_case_string)
 
 #but the previous method will tell you only the first word found, with rfind you find the index of the latest word found
 print(my_repeated_string.rfind('lower')," ",my_repeated_string)
+
+#there more methods to validate if this string does have a number
+
+my_number = "100"
+#this will return a tru or false
+print("this string is a number",my_number,"=",my_number.isdigit())
+
+#lets use some validations to confirm that string does not contains special characters
+my_alphanum = "ADFB2938364rtbdkgid"
+
+my_special = "mskdhksjhd$ksdkjf1001"
+
+print("this string is a does contains special characters",my_alphanum,"=",my_alphanum.isalnum())
+
+print("this string is a does not contains special characters",my_special,"=",my_special.isalnum())
+
+#we can also validate that if the string only contain letters
+
+print(my_string.isalpha()," ",my_string)
+
+print(my_lower_case_string.isalpha()," ",my_lower_case_string)
+
+

@@ -70,6 +70,50 @@ print("is the superset {} of {} {}".format(my_fourth_set,my_second_set,my_fourth
 print("is the superset {} of {} {}".format(my_fourth_set,my_first_set,my_fourth_set.issuperset(my_first_set)))
 
 
+#now with a more advanced methods we can do unions, update and more with the sets just like math
+
+#union in a new set
+
+my_union_set = my_first_set.union(my_second_set)
+
+print(f"now the new set is {my_union_set} and lets see that other sets are not touched {my_first_set} and {my_second_set}")
+
+#in nay case that you want to update with an union an specific set, you need to use update
+
+my_first_set.update(my_second_set)
+
+print(f"now we can see that new set is {my_first_set} just like the union {my_union_set} but the second set no changes {my_second_set}")
+
+#now to save the difference in a new set from the original
+
+my_difference_set = my_second_set.difference(my_last_set)
+
+print(f"now the difference is stored here {my_difference_set} from the original {my_second_set} and {my_last_set}")
+
+#now lest update one of the set with the difference from the original
+
+my_second_set.difference_update(my_last_set)
+
+print(f"now the new value of the set is {my_second_set} and the other stay as original {my_last_set}")
+
+#lets now create and get the values of intersection, are those values that are equal in two sets
+
+my_intersection = my_fourth_set.intersection(my_last_set)
+
+print(f"now the intersection is {my_intersection} ")
+
+#we can also update them too
+
+my_last_set.intersection_update(my_fourth_set)
+
+print(f"now last set will have only the values of intersection {my_last_set} and the other will be {my_fourth_set}")
+
+#finally there is a method that will take the different values and not the ones that are repeated vicesersa of intersecction
+
+my_simetric_difference = my_fourth_set.symmetric_difference(my_second_set)
+
+print(f"finally to have the value {my_simetric_difference} from {my_fourth_set} and {my_second_set}")
+
 
 
 

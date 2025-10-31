@@ -18,3 +18,6 @@ class Hello:
 
 if __name__ == '__main__':
     hello()
+
+
+#finally a trick to make this an specific package folder you can add the file __init__.py which will work as a constructor

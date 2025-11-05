@@ -47,4 +47,25 @@ print(f"the two most common values are: {counter1.most_common(2)}") # this will 
 
 print(f"this is the whole list of values, from the higher to the lower: {counter1.most_common()}") #no number 
 
-#since they are comming from collention class we can use more 
+#lets use now numbers
+
+counter3 = Counter(myNumberList)
+
+print (" count the list of numbers: {}".format(counter3))
+
+#we can see all the items
+
+print("the items are: ",counter3.items())
+
+print("the keys are: ",counter3.keys())
+
+print("the values of each key are: ",counter3.values())
+
+print("we want to know how many elements are in the list we can use a sum() like:",sum(counter3.values()))
+
+print("we can get it back to cast(trasform) the counter again in a list but this are not repeated values:",list(counter3))
+
+print("we can also cast back to a dictionary:",dict(counter3))
+
+
+#############################################################################################

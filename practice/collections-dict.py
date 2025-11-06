@@ -46,3 +46,27 @@ d4['uno'] = 'one'
 d4['tres'] = 'three'
 
 print("the dict will respect the order:",d4)
+
+#lets see some advanced methods with tuples
+
+t = (20,60,60)
+
+#to access to any element we use the idex location
+
+print("this is the first element: ",t[0])
+
+#lets use the collections called named tuple, this is inmutable (no changed) and can be used as a small class
+
+from collections import namedtuple
+
+People = namedtuple('People','name lastname age')
+#this will created a single people which is an inmutable object 
+people = People(name='Me',lastname='Too',age=23)
+
+#now we can access the data like this:
+
+print(f"the object {people} does have this info: {people.name}, {people.lastname} and {people.age}")
+
+#another way to use this namedtuple is to also go for locations like this:
+
+print(f"now we will use the location so the data is {people[0]}, {people[1]} and {people[-1]} as the last element")

@@ -41,3 +41,23 @@ print("at the half of the first line:\n",myfile.seek(len(myfile.readline())/2))
 print("now we will reading from the half to next:\n",myfile.read())
 
 myfile.close()
+
+#now we will try a method that will open the file and append.
+
+myfile = open('practice/files/mypointer.txt','r+')
+
+myfile.write('Here')
+#by mving the pointer 10 positions the add happens at the end of the file
+print(" new lines at the end",myfile.read(10))
+
+myfile.close()
+
+#if we do repeat the process with the r+ we will see then new lines at the end
+
+myfile = open('practice/files/mypointer.txt','r+')
+
+myfile.write('at the wall')
+#same behaviour as before the pointer gets moved after the write and it does add it at the end
+print(" another lines at the end:",myfile.read(10))
+
+myfile.close()

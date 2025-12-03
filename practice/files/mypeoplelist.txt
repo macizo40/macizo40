@@ -1,0 +1,6 @@
+1;Frank;Gamble;American;Male
+2;Peter;Jeremy;American;Male
+3;Hannah;Jameson;American;Female
+4;Sara;Harper;American;Female
+5;Ivonne;Castillo;Mexican;Female
+6;Barbara;Ezpinoza;Mexican;Female

@@ -22,7 +22,7 @@ class Client:
         self.social_network = social_network
 
     def __str__(self):
-        print(f" Client {self.name}, mobile {self.mobile} and social network {self.social_network}")
+        return (f" Client {self.name}, mobile {self.mobile} and social network {self.social_network}")
 
 class Client_Catalog:
     #having a list where we will store the clients data
@@ -34,10 +34,22 @@ class Client_Catalog:
         self.load_client_file()
 
     def add_client_name(self,cli):
+        for temp in self.clients_list:
+            if temp.name == cli.name:
+                return
         self.clients_list.append(cli)
         self.save_to_file()
 
-    def show_client(self):
+    def delete_client_name(self,name):
+        for temp in self.clients_list:
+            if temp.name == name:
+                self.clients_list.remove(temp)
+                self.save_to_file()
+                print("Client {} is deleted".format(temp.name))
+                return
+
+
+    def show_clients(self):
         if len(self.clients_list) == 0:
             print("client file is empty")
             return
@@ -62,4 +74,15 @@ class Client_Catalog:
         file.close()
 
     
-        
+
+Catalog_new_users = Client_Catalog()
+Catalog_new_users.show_clients()
+
+Catalog_new_users.add_client_name(Client ("Jenna Kelly",9334567347,"@jenna_k"))
+Catalog_new_users.add_client_name(Client ("Jill Patrick",9331117347,"@jill_patrick"))
+Catalog_new_users.add_client_name(Client ("Tera Jameson",9334533347,"@terajameson_1998"))
+
+Catalog_new_users.show_clients()
+
+Catalog_new_users.delete_client_name("Jenna Kelly")
+Catalog_new_users.show_clients()

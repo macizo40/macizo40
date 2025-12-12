@@ -17,7 +17,8 @@ root.resizable(300,300)
 
 #calling the frame object
 frame = Frame(root,width=600,height=600) #you need to pass as argument in which root this frame will exist, w and h too
-frame.pack()#after that you need to pack the frame in the root, so to do this 
+#frame.pack(side="top",anchor="center")#after that you need to pack the frame in the root, we set the side
+frame.pack(fill="both",expand="1")
 frame.config(cursor="pirate")#we will use more the config property to give color, border and more
 frame.config(bg="lightblue") #bg is the background
 frame.config(bd=20) #the border size

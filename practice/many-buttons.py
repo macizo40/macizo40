@@ -7,6 +7,16 @@ def operation ():
     result.set (float(number1.get()) + float(number2.get()))
     clean_values() #calling clean to set text values to nothing
 
+def reduction ():
+    #this operation will be kind different due is managing in the GUI
+    result.set (float(number1.get()) - float(number2.get()))
+    clean_values() #calling clean to set text values to nothing
+
+def multiply ():
+    #this operation will be kind different due is managing in the GUI
+    result.set (float(number1.get()) * float(number2.get()))
+    clean_values() #calling clean to set text values to nothing
+
 #lets define a method that cleand the text values after the button is clicked
 
 def clean_values():
@@ -37,7 +47,7 @@ Entry (root, justify="Center", textvariable=result, state="disabled").pack() #th
 
 #we do define the button and the method that will do the actions, the method need to exist before this
 Button (root,text="Operation",command=operation).pack()
-
-
+Button (root,text="Reduction",command=reduction).pack()
+Button (root,text="Multiply",command=multiply).pack()
 
 root.mainloop()

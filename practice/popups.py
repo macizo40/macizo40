@@ -27,6 +27,24 @@ def test():
     if result:
         root.destroy()
 
+    #there is a variance that instead returns an string, it return a true false value
+
+    result = messagebox.askyesno("Overwritte","Confirm overwritte the file?")
+
+    #in this case result is a boolean, true or false, so we can directly used it 
+
+    if result:
+        root.destroy()
+
+    #another common is the ask retry or cancel, which is was commonly used to retry an action in the programs.
+
+    result = messagebox.askretrycancel("Overwritte","Confirm overwritte the file?")
+
+    #in this case result is a boolean, true or false, so we can directly used it 
+
+    if result:
+        root.destroy()
+
 
 
 #define a button that will call the method

@@ -18,5 +18,7 @@ print(result) #you can confirm with this that is tuple and you can access to val
 #now we can handle the result with a tuple by positions and play with them as this
 print(f"Hello my name is {result[0]}, my age is {result[1]} and my email is {result[2]}") 
 
+#remember that after the fetchone is done, the pointer now was moved to the nex value, doing a fetch one again will bring the next one
+
 #as we did with the files we need to close the connection
 conn.close()

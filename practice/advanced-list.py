@@ -42,3 +42,24 @@ print("third list is {}".format(third_list))
 condition_in_list = [number for number in range(0,11) if number % 2 == 0]
 
 print(condition_in_list)
+
+#lets do another exmaple with a math practice
+number_list_2 = []
+for number in range(0,11):#this will run the values for 10 times
+    number_list_2.append(number**2)
+
+print(number_list_2)
+
+#now lest take the pairs numbers in a different list form the previous for
+pairs = []
+for number in number_list_2:
+    if number % 2 == 0:
+        pairs.append(number)
+
+print(pairs)
+
+#in the previous example we use the exit of one list in another process and then we got a result, now lets do it ina single line
+
+new_pairs = [number for number in [number**2 for number in range(0,11)] if number %2 == 0]#you can see the use of a list inside another
+
+print(new_pairs)

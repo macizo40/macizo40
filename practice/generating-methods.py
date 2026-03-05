@@ -28,3 +28,17 @@ print(next(my_yield_numbers))
 print(next(my_yield_numbers))
 
 print(next(my_yield_numbers))
+
+#but not all the objects are iterables, in example if we want to transform an object to something iterable we can use the iter method
+
+my_string = "12345"
+
+iterable_string = iter(my_string)
+
+print("String",next(iterable_string))
+
+print(next(iterable_string))
+
+print(next(iterable_string))
+
+print(next(iterable_string))

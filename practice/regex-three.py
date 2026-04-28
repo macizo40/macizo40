@@ -67,3 +67,49 @@ patterns_find(capital_list,my_alpha_text)
 patterns_find(numbers_letters_list, my_alpha_text)
 patterns_find(limited_characters,my_alpha_text)
 patterns_find(first_letter_caital,my_alpha_text)
+
+#another common useage if the escape characters this ones need an special way 
+
+validating_escape_character = 'this project did start in the 2025'
+
+#now lets try to test the scape list by number, this will find the numbers in the previous text
+
+find_just_numbers = [r'\d']
+
+#now lest use the method and see the result 
+patterns_find(find_just_numbers,validating_escape_character)#will print ['2', '0', '2', '5']
+
+#if we want to have just find numbers that are together like a year by 1 or more times
+
+one_or_more_numbers = [r'\d+']
+
+patterns_find(one_or_more_numbers,validating_escape_character) #this will print ['2025']
+
+#what about that we want to separate from the text all the letters and not numbers
+
+just_letters = [r'\D']
+
+#this will print 't', 'h', 'i', 's', ' ', 'p', 'r', 'o', 'j', 'e', 'c', 't', ' ', 'd', 'i', 'd', ' ', 's', 't', 'a', 'r', 't', ' ', 'i', 'n', ' ', 't', 'h', 'e', ' ']
+patterns_find(just_letters,validating_escape_character)
+
+#same way if we want to get non numbers that does repeate at least one more time, will give all the string
+
+letters_more_than_one_time = [r'\D+']
+
+#this will print['this project did start in the '], check the last space before the number
+patterns_find(letters_more_than_one_time,validating_escape_character)
+
+#lets do the same example before but with numbers in the middle like
+
+letters_numbers_text = 'this project version 1 started in the 2025'
+
+#this will print ['this project version ', ' started in the '], check that are spaces in the print
+patterns_find(letters_more_than_one_time,letters_numbers_text)
+
+#something not very common just to find th spaces
+
+find_just_spaces = [r'\s']
+
+patterns_find(find_just_spaces,letters_numbers_text)
+
+

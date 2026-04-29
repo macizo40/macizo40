@@ -101,7 +101,7 @@ patterns_find(letters_more_than_one_time,validating_escape_character)
 
 #lets do the same example before but with numbers in the middle like
 
-letters_numbers_text = 'this project version 1 started in the 2025'
+letters_numbers_text = 'this project version 1 started in    the 2025'
 
 #this will print ['this project version ', ' started in the '], check that are spaces in the print
 patterns_find(letters_more_than_one_time,letters_numbers_text)
@@ -112,4 +112,25 @@ find_just_spaces = [r'\s']
 
 patterns_find(find_just_spaces,letters_numbers_text)
 
+find_just_letters = [r'\S']
+#what about we want just all the characters and not have the spaces icluded 
 
+patterns_find(find_just_letters,letters_numbers_text)
+
+#now lets try to separate it with words
+
+separate_words = [r'\S+']
+
+patterns_find(separate_words,letters_numbers_text)
+
+#something similar to just bring the characters in using a different escape code also to have words
+
+alpha_escape = [r'\w',r'\w+']
+
+patterns_find(alpha_escape,letters_numbers_text)
+
+#finally to find all the blank spaces we use
+
+blank_spaces = [r'\W',r'\W+']
+
+patterns_find(blank_spaces,letters_numbers_text)

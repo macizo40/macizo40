@@ -9,7 +9,9 @@
 mylist = [1,3,4,2,5,78,65,45,32]
 
 #an usual method to work is the next
-
+"""
+Regular method that will help to do a simple math.
+"""
 def multiple(number):
     if number % 3 == 0:
         return True

@@ -12,7 +12,10 @@ text = "here is the largest text even and the code should find the three letters
 print("now running the regular expression object:",re.search('MMM',text))
 
 #we can use the regular expression to validate with a single if
-
+"""
+Now we wil start using docstrings, this is the first comment that I have
+This method is the one for found an item
+"""
 found_item = re.search('three',text)
 
 if found_item is not None:

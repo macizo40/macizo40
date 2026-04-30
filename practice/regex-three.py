@@ -1,6 +1,9 @@
 # lets then start to produce some patterns with some characters 
 #lets get some help with a method
 import re
+"""
+We have another method thay will help to find patterns in the text
+"""
 def patterns_find(patterns,text):
     for pattern in patterns:
         print(re.findall(pattern,text))

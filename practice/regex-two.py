@@ -15,7 +15,9 @@ print("finding a single word:",re.findall('star',mytext))
 #since the paters exist will give back the number of times, even the words does have more letters the pattern is true
 
 #lets get some help with a method
-
+"""
+This method will help to apply any regex pattern easy, by passing the list and then the text.
+"""
 def patterns_find(patterns,text):
     for pattern in patterns:
         print(re.findall(pattern,text))

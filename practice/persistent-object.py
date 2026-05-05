@@ -21,6 +21,9 @@ class Cake:
     
 
 #lest create a single method that will save some lines of code for each method
+"""
+This method does validate that the inputs are not empty, time to time the box can be send it like that
+"""
 def empty_validation(self,value):
     if not self:
         print("No cakes available.")
@@ -43,11 +46,15 @@ class CakeShop:
 
     def __str__(self):
         return "This is the Cake Shop class object"
-    
+    """
+    Single method to add a simple object in the file
+    """
     def add_cake(self,cake):
         self.cakes_list.append(cake)
         self.save_file()
-    
+    """
+    Key method to load the content of the file
+    """
     def load_file(self):
         #we will use now the advanced method to open in binary and with read rights too
         my_shop_file = open('practice/files/my_shop_file.pckl','ab+')
@@ -61,7 +68,9 @@ class CakeShop:
         finally:
             my_shop_file.close() #in case that error we always close it
             print("We have loaded {} objects from the file".format(len(self.cakes_list)))
-    
+    """
+    This method will help to save the content on the file.
+    """
     def save_file(self):
         #this save file process will be used to replace all the content of the file always.
         my_shop_file = open('practice/files/my_shop_file.pckl','wb')
@@ -69,6 +78,9 @@ class CakeShop:
         my_shop_file.close()
 
     #image then what I want to know from an object, maybe his form, we need a method to get it, we will use any value
+    """
+    This method will show the cake from the content loaded from the file.
+    """
     def show_cake(self, value=None):
         
         empty_validation (self,value)
@@ -88,7 +100,9 @@ class CakeShop:
         return None
 
     #now lets try the same approach as before to remove from the list an object 
-
+    """
+    As the same way that we need to add we need to remove the cake from the list.
+    """
     def remove_cake (self, value=None):
         #same as before we do validate the input
         empty_validation (self,value)

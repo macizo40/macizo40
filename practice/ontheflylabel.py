@@ -10,10 +10,16 @@ root.setWindowTitle("On the fly example")
 # we will use now a button that is clickable, with an action
 
 # first lets define a quick method or function, which will be excuted when you click the button
+"""
+Common method to do a click in the menus of the graphic view
+"""
 def clickme():
     print("You click me")
 
 # to do something in the window, lets first define a method example create a label
+"""
+Method to create a label on the fly with a dinamic view of the label
+"""
 def create_label():
     # this need to follow the same process as any other graphic object
     label = QLabel("Dynamic label creation")

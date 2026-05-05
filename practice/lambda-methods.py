@@ -1,7 +1,9 @@
 #now lets take a look to the lambda functions and how are they construct, but first we need to descontruc it to show the functionality
 
 #lest start with a simple method to understand more
-
+"""
+This method will let us multiply the number by 2
+"""
 def multiply(number):
     result = number * 2
     return result

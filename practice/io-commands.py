@@ -5,6 +5,9 @@ source = "/logs"
 dest = "/etc"
 
 # extensions considered backup
+"""
+This practice will tell us which are going to be the files that we will zip
+"""
 backup_ext = (".bak", ".backup", ".old", ".bkp")
 
 os = __import__("os")

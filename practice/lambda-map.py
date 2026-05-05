@@ -3,7 +3,9 @@
 mylist = [2,4,6,8,10,12]
 
 #lets imagine that we want also to apply a method to each element of the list
-
+"""
+This simple method will make the number a double of it's own value
+"""
 def double_number(number):
     return number*2
 

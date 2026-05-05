@@ -7,6 +7,9 @@ dictionary = [{'Name':'aldo','Lastname':'perez','id':'28375736473'},{'Name':'pac
 print("Dictionary is BOF {}".format(dictionary))
 
 #then lets create a method that will show all the clients in the dictionary
+"""
+Method that will show the clients objects in the dictionary
+"""
 def show_clients(clientnames, id):
     for c in clientnames:
         if (id == c ['id']):
@@ -15,6 +18,9 @@ def show_clients(clientnames, id):
     print(f"The search of client with id= '{id}', was not found")
 
 #lets work in a method that will delete the clients from the list 
+"""
+This method will delete the client from the list of objects.
+"""
 def delete_clients(clientnames, id):
     for i,c in enumerate(clientnames):
         if (id == c['id']):

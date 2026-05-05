@@ -25,7 +25,9 @@ people_list = [
 print("people list is ",people_list)
 
 #now we should be able to do this change with a lambda to find underage people
-
+"""
+This lambda will help us to set the list of users in the class that are under age, this does not use methods.
+"""
 underage = filter(lambda person:person.age <18,people_list)
 
 #now lets loop in the list that it was returned
